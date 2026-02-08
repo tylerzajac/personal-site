@@ -1,66 +1,88 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 3.815rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 3.052rem;
+}
+
+h3 {
+    font-size: 2.441rem;
+}
+
+h4 {
+    font-size: 1.953rem;
+}
+
+h5 {
+    font-size: 1.563rem;
+}
+
+h6 {
+    font-size: 1.25rem;
+}
+
+p {
+    font-size: 1rem;
 }
 
 body {
+    padding: 0 100px;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 
-    "navbar navbar"
-    "sidebar main"
-    "sidebar footer";
+    "left-side right-side";
+    align-items: center;
 }
 
-nav {
-    top: 0;
-    position: sticky;
-    grid-area: navbar;
-    background-color: lightblue;
-    color: darkblue;
-    padding: 1em;
+.left-side {
+    grid-area: left-side;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-button {
-    border: none;
+.left-side .text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.left-side .links {
+    display: flex;
+    gap: 20px;
+}
+
+.left-side .links > button {
     background-color: transparent;
+    border: 2px dashed red;
+    padding: 8px 12px;
+    border-radius: 64px;
+    font-size: 20px;
+    line-height: 16px;
 }
 
-aside {
-    height: calc(100vh - 60px);
-    position: sticky;
-    top: 60px;
-    align-self: start;
-    grid-area: sidebar;
-    background-color: gray;
+.right-side {
+    grid-area: right-side;
 }
 
-main {
-    grid-area: main;
+.right-side .img-container img {
+    border-radius: 36px;
 }
 
-footer {
-    grid-area: footer;
-    background: lightblue;
-    color: darkblue;
-    padding: 2em;
+.hero-image {
+    max-height: 610px;
+    max-width: 100%;
+    object-fit: fill;
 }
 
-@media(max-width: 800px) {
-    body {
-        grid-template-columns: 1fr;
-    }
-
-    aside {
-        position: fixed;
-        width: 300px;
-        display: none;
-    }
-
-    .show {
-        display: block;
-    }
-}
