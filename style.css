@@ -24,10 +24,15 @@ nav {
     padding: 1em;
 }
 
+button {
+    border: none;
+    background-color: transparent;
+}
+
 aside {
-    height: calc(100vh - 51.2px);
+    height: calc(100vh - 60px);
     position: sticky;
-    top: 51.2px;
+    top: 60px;
     align-self: start;
     grid-area: sidebar;
     background-color: gray;
